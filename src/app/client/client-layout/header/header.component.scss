@@ -1,33 +1,54 @@
 @import "./../../../../assets/styles/layout.scss";
 
-section {
+header {
   display: flex;
-  justify-content: center;
-  margin: auto;
-  padding: 20px 0;
-  width: 60%;
-  border-radius: 10px;
-  background-image: linear-gradient(
-    45deg,
-    $primary-color-200,
-    $black-color-500-5
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #2c0a4c,
+    #450d80
   );
-  figure {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: center;
-    img {
-      width: 10%;
-    }
+  padding: 1rem;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
 
-    figcaption {
-      font-size: 1.25rem;
-      font-weight: bold;
-      background-clip: text;
-      background-image: linear-gradient(45deg, black, rgb(0, 68, 255), $main-white);
-      color: transparent;
-    }
+img {
+  width: 3.5rem;
+  object-fit: contain;
+}
+
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 0.8rem;
+  text-wrap: balance;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 2rem;
+  }
+
+  img {
+    width: 4.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
   }
 }

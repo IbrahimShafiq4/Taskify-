@@ -1,0 +1,67 @@
+@import './../../../../../../../assets/styles/abstracts/variables.scss';
+article {
+  padding: 1rem;
+  color: #25113d;
+  background-color: #bf9ee5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+h2 {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 5px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.25;
+  font-weight: 400;
+  color: $black-color-500;
+}
+
+.actions {
+  text-align: right;
+  margin: 0;
+}
+
+.actions button {
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #380774;
+  color: #decdf2;
+  border-radius: 4px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #4a0774;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.task-state {
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.825rem;
+  background-color: #A83138;
+  color: #fff;
+  font-weight: 400;
+  &.completed {
+    background-color: #37843E;
+  }
+}

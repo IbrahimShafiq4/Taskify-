@@ -1,27 +1,16 @@
-import { Component } from '@angular/core';
-import { TaskItemComponent } from "../task-item/task-item.component";
+import { Component, input, InputSignal, signal } from '@angular/core';
+import { TaskItemComponent } from '../task-item/task-item.component';
 import { ITask, TaskService } from '../../../../services/tasks.service';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [TaskItemComponent, CommonModule],
+  imports: [TaskItemComponent, CommonModule, RouterModule],
   templateUrl: './task-list.component.html',
-  styleUrl: './task-list.component.scss'
+  styleUrl: './task-list.component.scss',
 })
 export class TaskListComponent {
-  tasks: ITask[] = [];
-
-  constructor(private _TaskService: TaskService) {}
-
-  ngOnInit(): void {
-    this._TaskService.getTasks().subscribe((data) => {
-      this.tasks = data;
-    });
-  }
-
-  toggleCompletion(task: ITask): void {
-    task.completed = !task.completed;
-  }
+  tasks: InputSignal<ITask[] | undefined> = input.required({});
 }

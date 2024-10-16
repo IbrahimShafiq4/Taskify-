@@ -1,4 +1,9 @@
-<div class="task-item" [class.completed]="task.completed" (click)="toggleTask()">
-  <h3>{{ task.title }}</h3>
-  <p>Status: {{ task.completed ? 'Completed' : 'Pending' }}</p>
-</div>
+<article>
+  <h2> {{ task.title }} </h2>
+  <img [src]="task.image" [alt]="task.title">
+  <p>
+    {{ task.text }}
+  </p>
+  <div class="actions"><button (click)="onToggleTaskState()"> {{ !task.completed ? 'Finish' : 'unFinish' }} </button></div>
+  <div class="task-state" [class.completed]="task.completed" >  {{ task.completed ? 'Completed' : 'Pending' }}  </div>
+</article>

@@ -1,7 +1,8 @@
-<div class="task-list">
-  <app-task-item
-    *ngFor="let task of tasks"
-    [task]="task"
-    (toggle)="toggleCompletion(task)"
-  ></app-task-item>
-</div>
+@for (item of tasks(); track $index) {
+  <div>
+    <button [routerLink]="['/home/task-item/' + item.id]" >
+      <img [src]="item.image" [alt]="item.title" />
+      <span> {{ item.title }} </span>
+    </button>
+  </div>
+}

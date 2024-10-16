@@ -1,2 +1,10 @@
-<app-task-list />
-<app-task-item />
+<app-header />
+
+<main>
+  <ul id="users">
+    <li> <app-task-list [tasks]="tasks" /> </li>
+  </ul>
+  <div id="fallback">
+    <router-outlet></router-outlet>
+  </div>
+</main>
