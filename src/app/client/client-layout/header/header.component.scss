@@ -1,0 +1,33 @@
+@import "./../../../../assets/styles/layout.scss";
+
+section {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 20px 0;
+  width: 60%;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    45deg,
+    $primary-color-200,
+    $black-color-500-5
+  );
+  figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    img {
+      width: 10%;
+    }
+
+    figcaption {
+      font-size: 1.25rem;
+      font-weight: bold;
+      background-clip: text;
+      background-image: linear-gradient(45deg, black, rgb(0, 68, 255), $main-white);
+      color: transparent;
+    }
+  }
+}

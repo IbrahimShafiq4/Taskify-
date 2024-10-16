@@ -1,0 +1,7 @@
+<div class="task-list">
+  <app-all-tasks-items
+    *ngFor="let task of tasks"
+    [task]="task"
+    (toggle)="toggleCompletion(task)"
+  ></app-all-tasks-items>
+</div>
