@@ -1,8 +1,8 @@
-@for (item of tasks(); track $index) {
-  <div>
-    <button [routerLink]="['/home/task-item/' + item.id]" >
-      <img [src]="item.image" [alt]="item.title" />
-      <span> {{ item.title }} </span>
-    </button>
-  </div>
+@for (item of tasks(); track item.id; let i = $index;) {
+<div>
+  <button [routerLink]="['/home/task-item/' + (i+1)]">
+    <img [src]="item.image" [alt]="item.title" />
+    <span> {{ item.title }} </span>
+  </button>
+</div>
 }

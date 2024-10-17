@@ -1,5 +1,7 @@
 <app-header />
-
+<div class="btn">
+  <button (click)="onOpenAddTask()"> Add Task </button>
+</div>
 <main>
   <ul id="users">
     <li> <app-task-list [tasks]="tasks" /> </li>
@@ -8,3 +10,4 @@
     <router-outlet></router-outlet>
   </div>
 </main>
+<ng-container #popupContainer></ng-container>

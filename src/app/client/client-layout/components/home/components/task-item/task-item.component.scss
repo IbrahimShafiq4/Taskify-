@@ -31,6 +31,10 @@ p {
 .actions {
   text-align: right;
   margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 .actions button {
@@ -46,11 +50,26 @@ p {
   transition: all 0.3s ease;
 }
 
+.actions .danger {
+  background-color: transparent;
+  color: #A83138;
+  border: 1px solid #A83138;
+}
+
 .actions button:hover,
 .actions button:active {
   background-color: #4a0774;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
+
+.actions .danger:hover,
+.actions .danger:active {
+  background-color: #A83138;
+  color: #fff;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
 
 .task-state {
   padding: 0.25rem 0.5rem;

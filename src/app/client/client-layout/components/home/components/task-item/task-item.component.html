@@ -4,6 +4,9 @@
   <p>
     {{ task.text }}
   </p>
-  <div class="actions"><button (click)="onToggleTaskState()"> {{ !task.completed ? 'Finish' : 'unFinish' }} </button></div>
+  <div class="actions">
+    <button (click)="onToggleTaskState()"> {{ !task.completed ? 'Finish' : 'unFinish' }} </button>
+    <button (click)="onDeleteTask(task.id)" class="danger"> Delete Task </button>
+  </div>
   <div class="task-state" [class.completed]="task.completed" >  {{ task.completed ? 'Completed' : 'Pending' }}  </div>
 </article>

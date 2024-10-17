@@ -1,6 +1,6 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { ITask, TaskService } from '../../../../services/tasks.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-item',
@@ -20,14 +20,9 @@ export class TaskItemComponent {
 
   taskId: number = 0;
 
-  @Output() toggle = new EventEmitter<void>();
-
-  toggleTask(): void {
-    this.toggle.emit();
-  }
-
   private _TaskService = inject(TaskService);
   private _ActivatedRoute = inject(ActivatedRoute);
+  private _Router = inject(Router)
 
   checkRoute(): void {
     this._ActivatedRoute.params.subscribe((params: Params) => {
@@ -49,4 +44,14 @@ export class TaskItemComponent {
   onToggleTaskState(): void {
     this.task.completed = !this.task.completed
   }
+
+  onDeleteTask(taskId: number): void {
+    const index = this._TaskService.tasks.findIndex(task => task.id === taskId);
+    if (index !== -1) {
+      this._TaskService.tasks.splice(index, 1);
+      this.task = {completed: false, id: 0, title: '', image: '', text: ''};
+      this._Router.navigate(['../../'])
+    }
+  }
+
 }

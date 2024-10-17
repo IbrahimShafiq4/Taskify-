@@ -11,6 +11,7 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss',
 })
+
 export class TaskListComponent {
   tasks: InputSignal<ITask[] | undefined> = input.required({});
 }

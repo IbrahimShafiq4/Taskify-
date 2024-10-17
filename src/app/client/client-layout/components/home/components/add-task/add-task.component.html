@@ -1,0 +1,22 @@
+<div class="backdrop">
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="dialog">
+    <div *ngFor="let field of formFields">
+      <label [for]="field.controlName">{{ field.label }}:</label>
+
+      <ng-container [ngSwitch]="field.type">
+
+        <input *ngSwitchCase="'text'" [formControlName]="field.controlName" type="text" [id]="field.controlName" />
+        <textarea *ngSwitchCase="'textarea'" [formControlName]="field.controlName" [id]="field.controlName"></textarea>
+        <input *ngSwitchCase="'file'" type="file" (change)="onFileSelected($event)" [id]="field.controlName" />
+        <input *ngSwitchCase="'checkbox'" [formControlName]="field.controlName" type="checkbox"
+          [id]="field.controlName" />
+
+      </ng-container>
+    </div>
+
+    <div>
+      <button type="submit">Add Task</button>
+    </div>
+  </form>
+
+</div>

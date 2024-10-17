@@ -1,10 +1,21 @@
-main {
+main, .btn {
   width: 90%;
   max-width: 50rem;
-  margin: 2.5rem auto;
+  margin: 2.5rem auto 0;
   display: grid;
   grid-auto-flow: row;
   gap: 2rem;
+}
+
+.btn {
+  justify-content: flex-end;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  align-self: flex-end;
+  cursor: pointer;
 }
 
 #users {
